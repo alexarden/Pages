@@ -1,0 +1,137 @@
+body{
+  text-align: center;
+  background-color: rgb(234, 234, 234);
+} 
+
+table{
+  width: 720px;
+  height: 740px;  
+  margin: 0 auto; 
+  background-color: rgb(38, 38, 38);
+  box-sizing: border-box;
+  position: relative;
+  
+} 
+tr{
+  min-height: 80px; 
+  box-sizing: border-box;
+}
+td{
+ height: fit-content; 
+ min-width: 80px; 
+ min-height: 80px;
+ box-sizing: border-box; 
+}
+
+.dark-cell{
+  background-image: url(./img/Black_Cell.png);
+  height: 80px;
+  width: 80px;
+}
+
+.white-cell{
+  background-image: url(./img/White_Cell.png);
+  height: 80px;
+  width: 80px; 
+}
+
+img{
+  width: 60px;
+  height: 60px; 
+}
+
+
+/* game marks */
+
+.selected{
+  border: 3px solid rgb(0, 255, 0); 
+}
+
+.movement{
+  border: 3px solid rgb(255, 255, 0); 
+}
+
+.eat{
+  border: 3px solid rgb(255, 0, 0); 
+}
+
+/* popup style */
+
+.winner{
+  background-color: rgba(186, 184, 184, 0.711);
+  backdrop-filter: blur(2px); 
+  color: rgb(0, 0, 0);   
+  height: 90%;
+  width: 900px;
+  position: absolute;
+  z-index: 1; 
+  top: 53%;  
+  left: 50%;
+  transform: translate( -50% , -50%);
+  border-radius: 16px; 
+  text-align: center;
+  padding-top: 340px;        
+  box-sizing: border-box;
+  font-size: 3em; 
+  opacity: 0.8; 
+  animation: fadeIn 1.5s linear; 
+}
+
+.winner::first-letter{
+  font-size: 1.6em;
+}
+
+/* popup animation */
+
+@keyframes fadeIn {
+
+  from{ opacity: 0; }
+  to{ opacity: 0.7;}
+}
+
+/* popup responsiveness */
+
+@media screen and (max-width: 1080px){ 
+  .winner{
+    height: 100%;
+    width: 100%; 
+    top: 50%; 
+  }
+}
+
+
+/* turn div */
+
+.turn{
+  background-color: rgb(217, 215, 215);
+  backdrop-filter: blur(3px);
+  border-radius: 1em; 
+  height: fit-content;
+  width: fit-content;
+  top: 825px;
+  left: 43%;
+  padding: 25px;
+  font-size: 2em;
+  position: absolute;
+}
+
+/* turn div responsiveness */
+
+@media screen and (max-width: 1600px) {
+  .turn{
+    left: 40%; 
+  }
+  
+}
+@media screen and (max-width: 1400px) {
+  .turn{
+    left: 35%; 
+  }
+  
+}
+@media screen and (max-width: 1200px) {
+  .turn{
+    left: 30%; 
+  }
+  
+}

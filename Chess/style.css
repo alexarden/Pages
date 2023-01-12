@@ -1,0 +1,200 @@
+body{
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+}
+
+h1{
+  width: fit-content;
+  text-align: center; 
+  margin: 10px auto;   
+ }
+
+
+/* The chess board */
+
+table{
+  background-color: rgb(218, 217, 217);
+  max-width: 800px;
+  max-height: 800px;
+  min-width: 800px;
+  min-height: 800px;  
+  margin: 25px auto;  
+  padding: 0; 
+  border: 2px solid rgb(120, 120, 120, 0);
+  box-shadow: 1px 1px 20px 15px rgb(114, 114, 114);   
+  box-sizing: border-box;   
+  position: relative;  
+  user-select: none;  
+}
+
+td{
+  max-width: 100px;
+  max-height: 100px;
+  min-width: 100px;
+  min-height: 100px;
+  height: 100px;
+  box-sizing: border-box;
+}
+
+tr:nth-child(even) td:nth-child(odd){  
+  position: relative;
+  /* background-color: rgb(76, 76, 76); */
+  background-image: url('img/GoldSquare.png');  
+}
+
+tr:nth-child(odd) :nth-child(even){
+  position: relative;
+  /* background-color: rgb(76, 76, 76); */
+  background-image: url('img/GoldSquare.png');
+}
+
+tr:nth-child(odd) td:nth-child(odd){  
+  position: relative;
+  /* background-color: rgb(76, 76, 76); */
+  background-image: url('img/SilverSquare.png');  
+} 
+
+tr:nth-child(even) td:nth-child(even){  
+  position: relative;
+  /* background-color: rgb(76, 76, 76); */
+  background-image: url('img/SilverSquare.png');  
+} 
+
+
+
+/* piece images */
+
+img.goldPawns{ 
+  width: 50px;
+  height: 75px;
+  margin-left: 22px;
+}   
+
+img.silverPawns{
+  width: 45px;
+  height: 80px;
+  margin-left: 22px;
+} 
+
+/* cell movements styles */
+
+.select{
+border: 4px solid rgb(109, 251, 109);  
+box-sizing: border-box;  
+}
+
+.movement{
+  border: 4px solid rgb(228, 247, 59);
+}
+
+.attack{
+  border: 3px solid rgb(250, 91, 91);  
+}
+
+.castle{
+  border: 1px solid blue;  
+}
+
+/* Winner pop up  */
+
+div.popup{
+  position: absolute;
+  text-align: center;
+  top: 57%;
+  left: 50%; 
+  transform: translate( -50%, -50%); 
+  background-color: rgb(246, 245, 245);
+  color: black;
+  border-radius: 16px;
+  box-shadow: 1px 1px 50px 4000px rgb(26, 20, 20, 0.6);    
+  height: fit-content;
+  width: 400px; 
+  padding: 100px; 
+  z-index: 1;
+  font-size: 1.2em; 
+  opacity: 1;
+  animation: fadeIn 1.5s linear none;   
+  
+} 
+
+/* Game over */
+
+div::first-letter{
+  font-size: 1.6em;  
+}
+
+/* Board frame */
+
+div.trapezoid{
+  border-bottom: 50px solid rgb(26, 22, 22, 0.5); 
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  height: 0; 
+  width: 823px;    
+  transform: rotateZ(180deg); 
+  margin: 76px auto; 
+  margin-bottom: -25px; 
+  position: relative;
+  margin-top: 17px;
+} 
+
+div.trapezoid.bottom{  
+  transform: rotateZ(180deg);  
+  position: absolute;
+  top: -890px;
+  left: -51px; 
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row-reverse; 
+  justify-content: space-around;
+}
+
+div.trapezoid.right{ 
+  transform: rotateZ(90deg); 
+  position: absolute;
+  top: -453px;
+  left: -486px;
+}
+
+div.trapezoid.left{ 
+  transform: rotateZ(270deg);  
+  position: absolute;
+  top: -454px;
+  left: 385px; 
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;   
+  justify-content: space-around; 
+}
+
+div.left div{
+  margin-top: 10px; 
+}
+
+div.bottom div{
+  margin-top: 10px; 
+}
+
+
+/* Animations */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to{
+    opacity: 1;
+  }
+}
+
+/* Responsiveness */
+
+@media screen and (max-width: 960px){
+  
+ div.trapezoid{
+   display: none;  
+ }
+
+}
