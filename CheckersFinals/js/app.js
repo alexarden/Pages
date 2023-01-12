@@ -17,12 +17,12 @@ let checkerCanEat = [];
 const checkForEats = () => {
 
   // As a defalut all checkers are disabled.
-  // if no eat can be made all checker can move.
-  //if an eat is available only the one checker who can eat can move.
+  // If no eat can be made all checker can move.
+  // If an eat is available only the one checker who can eat can move.
 
   checkerCanEat = [];
   const whiteMoves = [];
-  const blackMoves = []; 
+  const blackMoves = [];  
   
   for(let checker of gameData.checkers){
 
